@@ -27,7 +27,7 @@ if ( tweakjp_is_mobile_or_tablet() ) {
 
 
 function tweakjp_minileven_featuredimage( $title ) {
-	if ( has_post_thumbnail() && is_home() ) {
+	if ( has_post_thumbnail() && is_home() && in_the_loop() ) {
 	    $featured_content = get_the_post_thumbnail();
 	    $title .= $featured_content;
 	    return $title;
