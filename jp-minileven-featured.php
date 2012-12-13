@@ -31,5 +31,7 @@ function tweakjp_minileven_featuredimage( $title ) {
 	    $featured_content = get_the_post_thumbnail();
 	    $title .= $featured_content;
 	    return $title;
+	} else {
+		return $title;
 	}
 }
