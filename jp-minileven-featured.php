@@ -4,7 +4,7 @@
  * Plugin URI: http://wordpress.org/extend/plugins/jetpack-mobile-theme-featured-images/
  * Description: Adds Featured Images before the content on the home page, in Jetpack Mobile theme
  * Author: Jeremy Herve
- * Version: 1.2
+ * Version: 1.2.1
  * Author URI: http://jeremyherve.com
  * License: GPL2+
  * Text Domain: jetpack
@@ -28,7 +28,7 @@ function tweakjp_maybe_add_filter() {
 add_action( 'wp_head', 'tweakjp_maybe_add_filter' );
 
 function tweakjp_minileven_featuredimage( $title ) {
-	$tweak = has_post_thumbnail() && is_home() && in_the_loop();
+	$tweak = has_post_thumbnail() && in_the_loop();
 	$featured_content = ( $tweak ) ? get_the_post_thumbnail() : '';
 
 	return $title . $featured_content;
