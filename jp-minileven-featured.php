@@ -12,17 +12,17 @@
  
 // Check if we are on mobile
 // Props @saracannon http://ran.ge/2012/12/05/parallax-and-mobile/
-function tweakjp_is_mobile_or_tablet() {
+function tweakjp_is_mobile() {
     if ( ! class_exists( 'Jetpack_User_Agent_Info' ) )
     	return false;
 
     $ua_info = new Jetpack_User_Agent_Info();
-    return ( jetpack_is_mobile() || $ua_info->is_tablet() );
+    return ( jetpack_is_mobile() );
 }
 
 // On Mobile? Let's add the Featured Image
 function tweakjp_maybe_add_filter() {
-	if ( tweakjp_is_mobile_or_tablet() )
+	if ( tweakjp_is_mobile() )
 		add_filter( 'the_title', 'tweakjp_minileven_featuredimage' );
 }
 add_action( 'wp_head', 'tweakjp_maybe_add_filter' );
