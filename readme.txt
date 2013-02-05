@@ -1,8 +1,8 @@
 === Jetpack Mobile Theme Featured images ===
 Contributors: jeherve, evansolomon
 Tags: WordPress.com, Jetpack, mobile, minileven, featured images
-Requires at least: 3.2
-Tested up to: 3.5
+Requires at least: 3.3
+Tested up to: 3.5.1
 Stable tag: 1.4
 
 Adds Featured Images before the content, in the Jetpack Mobile theme
