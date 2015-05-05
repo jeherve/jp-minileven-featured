@@ -10,6 +10,11 @@
  * Text Domain: jetpack
  */
 
+// Load language files
+function jp_mini_featured_textdomain() {
+	load_plugin_textdomain( 'jp_mini_featured', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'jp_mini_featured_textdomain' );
 
 /*
  * Options page
@@ -59,7 +64,7 @@ function jp_mini_featured_do_page() {
 		<?php wp_nonce_field( 'jp_mini_featured' ); ?>
 		<table class="form-table">
 			<tr valign="top">
-				<th scope="row"><?php _e( 'Show featured images on front page and archive pages', 'jetpack' ); ?></th>
+				<th scope="row"><?php _e( 'Show featured images on front page and archive pages', 'jp_mini_featured' ); ?></th>
 			<td>
 				<label for="wp_mobile_featured_images">
 					<input name="wp_mobile_featured_images" type="radio" value="1" class="code" <?php checked( 1, $feat_home, true ); ?> />
