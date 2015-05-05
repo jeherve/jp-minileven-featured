@@ -90,8 +90,6 @@ function jp_mini_featured_do_page() {
 			settings_fields( 'jp_mini_featured_group' );
 			$options = get_option( 'jp_mini_featured_options' );
 
-			print_r( $options );
-
 			// Default to show Featured Images on the front page only
 			if ( ! isset( $options['show'] ) ) {
 				$options['show'] = array(
