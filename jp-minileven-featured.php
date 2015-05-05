@@ -1,10 +1,10 @@
 <?php
 /*
  * Plugin Name: Jetpack Mobile Theme Featured images
- * Plugin URI: http://wordpress.org/extend/plugins/jetpack-mobile-theme-featured-images/
- * Description: Adds Featured Images before the content on the home page, in Jetpack Mobile theme
+ * Plugin URI: http://wordpress.org/plugins/jetpack-mobile-theme-featured-images/
+ * Description: Adds Featured Images before the content, in Jetpack's Mobile theme
  * Author: Jeremy Herve
- * Version: 1.5
+ * Version: 1.6
  * Author URI: http://jeremyherve.com
  * License: GPL2+
  * Text Domain: jetpack
@@ -20,9 +20,9 @@ add_action( 'admin_init', 'jp_mini_featured_init' );
 // Init plugin options
 function jp_mini_featured_init() {
 	add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'jp_mini_featured_action_links' );
-	
+
 	register_setting( 'jp_mini_featured_options', 'jp_mini_featured_strings', 'jp_mini_featured_validate' );
-	
+
 	// Add settings to the Minileven Options page
 	add_action( 'jetpack_module_configuration_screen_minileven', 'jp_mini_featured_configuration_load' );
 	add_action( 'jetpack_module_configuration_screen_minileven', 'jp_mini_featured_do_page' );
@@ -62,10 +62,10 @@ function jp_mini_featured_do_page() {
 				<th scope="row"><?php _e( 'Show featured images on front page and archive pages', 'jetpack' ); ?></th>
 			<td>
 				<label for="wp_mobile_featured_images">
-					<input name="wp_mobile_featured_images" type="radio" value="1" class="code" <?php checked( 1, $feat_home, true ); ?> /> 
-					<?php _e( 'Yes' ); ?> 
-					<input name="wp_mobile_featured_images" type="radio" value="0" class="code" <?php checked( 0, $feat_home, true ); ?> /> 
-					<?php _e( 'No' ); ?> 
+					<input name="wp_mobile_featured_images" type="radio" value="1" class="code" <?php checked( 1, $feat_home, true ); ?> />
+					<?php _e( 'Yes' ); ?>
+					<input name="wp_mobile_featured_images" type="radio" value="0" class="code" <?php checked( 0, $feat_home, true ); ?> />
+					<?php _e( 'No' ); ?>
 				</label>
 			</td>
 			</tr>
@@ -73,6 +73,6 @@ function jp_mini_featured_do_page() {
 		<p class="submit">
 		<input type="submit" class="button-primary" value="<?php _e( 'Save Configuration', 'jetpack' ) ?>" />
 		</p>
-	</form> 
-<?php 	
+	</form>
+<?php
 }
